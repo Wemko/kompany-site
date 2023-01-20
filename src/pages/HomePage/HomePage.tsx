@@ -16,7 +16,6 @@ const HomePage: FunctionComponent = () => {
 
     useEffect(() => {
         const request = async () => {
-            console.log('hai')
             const url: URL = new URL(`${API_BASE_URL}/companies`);
             url.search = new URLSearchParams({ search }).toString();
 

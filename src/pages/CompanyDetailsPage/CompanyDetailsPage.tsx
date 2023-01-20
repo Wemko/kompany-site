@@ -1,4 +1,4 @@
-import { Card, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import { FunctionComponent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CompanyCard from "../../components/CompanyCard/CompanyCard";
@@ -24,7 +24,7 @@ const CompanyDetailsPage: FunctionComponent = () => {
             try {
                 const [response, responseDetails] = await Promise.all([fetch(url), fetch(urlDetails)]);
 
-                if (response.status === 200 && responseDetails.status == 200) {
+                if (response.status === 200 && responseDetails.status === 200) {
                     const data: CompanyResponse = await response.json();
                     const dataDetails: CompanyDetailsResponse = await responseDetails.json();
 
@@ -41,9 +41,9 @@ const CompanyDetailsPage: FunctionComponent = () => {
         }
 
         request();
-    }, []);
+    }, [id]);
 
-    if (loading || error) return <></>;    
+    if (loading || error) return <></>;
 
     return <>
         <Header title="Details" />
