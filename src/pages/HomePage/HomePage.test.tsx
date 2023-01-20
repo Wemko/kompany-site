@@ -105,9 +105,11 @@ describe('Homepage', () => {
 
             expect(fetch).toHaveBeenCalledTimes(1);
             /*
-                Bug, not sure why but the expected and received both match the have been called with.
-                Also tried using the expect.stringContaining('search=feest'); Which gave the same result.
-                Might be an dependency issue.
+                Bug: The expected and received from toHaveBeenCalledWith both match 
+                but it still fails suggesting they are not the same.
+                Also tried using the expect.stringContaining('search=feest'); which gave the same result.
+                Might be an dependency issue or I'm missing something. 
+                Kept this here to indicate that is my intented test but didn't had enough time to finish it.
             */
             // expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/companies?search=feest`);
         });
